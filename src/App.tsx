@@ -6,7 +6,7 @@ import {
   LayoutDashboard, LockKeyhole, Menu, Moon, MoreHorizontal, Pause, Play,
   RefreshCw, RotateCcw, Save, Search, Settings, ShieldCheck, SlidersHorizontal,
   Square, Sun, UserRound, WifiOff, Waves, X, Zap, BarChart3, Gauge,
-  ClipboardList, CalendarDays
+  ClipboardList
 } from "lucide-react";
 
 type Theme = "light" | "dark";
