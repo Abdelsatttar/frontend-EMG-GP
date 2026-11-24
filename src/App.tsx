@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "react";
 import {
-  Activity, ArrowDownToLine, ArrowLeft, ArrowRight, Bell, CalendarDays, Check, CheckCircle2,
-  ChevronDown, ChevronLeft, ChevronRight, CircleHelp, Clock3, Download, Eye, EyeOff,
-  FileText, Fingerprint, Hand, Home, Info, LayoutDashboard, LockKeyhole, LogOut, Menu,
-  Moon, MoreHorizontal, Search, Settings, ShieldCheck, SlidersHorizontal, Sun, UserRound,
-  Wifi, WifiOff, X, Zap, CircleAlert, RefreshCw, Play, Pause, Square, RotateCcw, Filter,
-  ChartNoAxesCombined, ActivitySquare, Cpu, Waves, Mail, Smartphone, ExternalLink, Save,
-  CalendarClock, ClipboardList, Gauge, HeartPulse, Command, CheckCircle
+  Activity, ArrowLeft, ArrowRight, Bell, CalendarDays, Check, CheckCircle2,
+  ChevronDown, ChevronLeft, ChevronRight, CircleAlert, Clock3, Command, Cpu,
+  Download, Eye, EyeOff, FileText, Filter, Fingerprint, Hand, Home, Info,
+  LayoutDashboard, LockKeyhole, Menu, Moon, MoreHorizontal, Pause, Play,
+  RefreshCw, RotateCcw, Save, Search, Settings, ShieldCheck, SlidersHorizontal,
+  Square, Sun, UserRound, WifiOff, Waves, X, Zap, ChartNoAxesCombined, Gauge,
+  ClipboardList, CalendarClock
 } from "lucide-react";
 
 type Theme = "light" | "dark";
