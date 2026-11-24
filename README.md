@@ -53,6 +53,14 @@ npm run preview
 - Lucide React
 - Responsive custom CSS
 
+## Project structure
+
+- `src/App.tsx` — application routes, page composition, and frontend interactions
+- `src/index.css` — shared design system and responsive layouts
+- `src/types/neurogrip.ts` — typed device, EMG, gesture, calibration, history, and profile models
+- `src/services/contracts.ts` — service interfaces for the future API and device adapters
+- `src/services/apiClient.ts` — configurable HTTP client; the API base URL must be supplied by the integrating environment
+
 ## Important integration status
 
 This repository currently contains a frontend experience only. The following are **not connected or implemented as live services**:
@@ -63,7 +71,7 @@ This repository currently contains a frontend experience only. The following are
 - Backend authentication, Google OAuth, password reset delivery, and account security
 - Persistent server-side profiles, sessions, calibration, history, or reports
 
-Charts and example history rows are marked as simulated. Interactive preview controls do not send commands to physical hardware. The profile image is previewed locally only. Future integration points should use ASP.NET Core Web API services and a clearly defined ESP32 data transport contract.
+Charts and example history rows are marked as simulated. Interactive preview controls do not send commands to physical hardware. The profile image is previewed locally only. Typed integration contracts are provided under `src/services` and `src/types`. They are interfaces only; provide real ASP.NET Core Web API implementations and a clearly defined ESP32 data transport contract before connecting the UI.
 
 ## Branding
 
