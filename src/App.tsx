@@ -5,8 +5,8 @@ import {
   Download, Eye, EyeOff, FileText, Filter, Fingerprint, Hand, Home, Info,
   LayoutDashboard, LockKeyhole, Menu, Moon, MoreHorizontal, Pause, Play,
   RefreshCw, RotateCcw, Save, Search, Settings, ShieldCheck, SlidersHorizontal,
-  Square, Sun, UserRound, WifiOff, Waves, X, Zap, ChartNoAxesCombined, Gauge,
-  ClipboardList, CalendarClock
+  Square, Sun, UserRound, WifiOff, Waves, X, Zap, BarChart3, Gauge,
+  ClipboardList, CalendarDays
 } from "lucide-react";
 
 type Theme = "light" | "dark";
