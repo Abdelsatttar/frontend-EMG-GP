@@ -1,6 +1,37 @@
 # NEUROGRIP Frontend
 
-Responsive React + TypeScript frontend prototype for the NEUROGRIP EMG-powered prosthetic hand companion.
+Responsive React + TypeScript application interface for the NEUROGRIP AI-powered smart prosthetic hand graduation project.
+
+## Project scope represented in the UI
+
+The current hardware workflow is represented as:
+
+1. One surface EMG sensor captures forearm muscle activity.
+2. One analog EMG signal channel is acquired by the ESP32.
+3. The signal-processing and recognition workflow identifies one of two supported gestures: **Open Hand** or **Fist**.
+4. The ESP32 controls servo motors to operate the prosthetic fingers.
+
+The interface intentionally does not describe cameras, pressure sensors, extra EMG channels, or unsupported gestures as implemented hardware capabilities.
+
+## Included routes
+
+### Public
+- `/` — Product landing page
+- `/login` — Login UI
+- `/register` — Registration UI
+- `/forgot-password` — Password reset request UI
+- `/reset-password` — New password UI
+
+### Application
+- `/dashboard` — System overview
+- `/dashboard/emg-monitoring` — Signal monitoring preview
+- `/dashboard/gesture-recognition` — Open Hand and Fist classes
+- `/dashboard/hand-control` — Two-state hand control preview
+- `/dashboard/calibration` — Five-step calibration guide
+- `/dashboard/history` — Searchable and filterable sample records
+- `/dashboard/reports` — Reporting layout and sample visualizations
+- `/dashboard/profile` — Local profile details and photo preview
+- `/dashboard/settings` — Theme and interface preferences
 
 ## Run locally
 
@@ -18,12 +49,22 @@ npm run preview
 
 ## Stack
 - React 18 + TypeScript + Vite
-- Tailwind CSS
 - Framer Motion
 - Lucide React
+- Responsive custom CSS
 
-## Included screens
-Dashboard, How to Use, EMG Learning, Hand Practice, Live Monitor, My Sessions, My Profile, and Settings. The UI includes Arabic/English with RTL/LTR, persistent light/dark appearance, reduced-motion preference, local tutorial progress, local profile preferences, local video preview, and an animated startup screen.
+## Important integration status
 
-## Important
-Frontend-only prototype. No real ESP32 connection, real EMG capture, servo control, backend authentication, or server-side persistence is implemented. Waveforms are illustrative. Open Hand and Fist are the current core gestures; Pinch and Pointing are future possibilities. Selected videos are previewed locally and are not uploaded.
+This repository currently contains a frontend experience only. The following are **not connected or implemented as live services**:
+- ESP32 communication, Bluetooth/Wi-Fi transport, or WebSocket streaming
+- Real EMG sampling and calibrated signal values
+- A trained gesture-recognition model or model confidence output
+- Physical servo commands or device execution acknowledgements
+- Backend authentication, Google OAuth, password reset delivery, and account security
+- Persistent server-side profiles, sessions, calibration, history, or reports
+
+Charts and example history rows are marked as simulated. Interactive preview controls do not send commands to physical hardware. The profile image is previewed locally only. Future integration points should use ASP.NET Core Web API services and a clearly defined ESP32 data transport contract.
+
+## Branding
+
+NEUROGRIP uses the blue medical-technology design direction, responsive application shell, and consistent light/dark interface themes.
