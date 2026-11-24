@@ -21,7 +21,7 @@ const navigation: Route[] = [
   { path: "/dashboard/hand-control", label: "Hand Control", icon: Hand, group: "Workspace" },
   { path: "/dashboard/calibration", label: "Calibration", icon: SlidersHorizontal, group: "Workspace" },
   { path: "/dashboard/history", label: "History", icon: Clock3, group: "Management" },
-  { path: "/dashboard/reports", label: "Reports", icon: ChartNoAxesCombined, group: "Management" },
+  { path: "/dashboard/reports", label: "Reports", icon: BarChart3, group: "Management" },
   { path: "/dashboard/profile", label: "Profile", icon: UserRound, group: "Account" },
   { path: "/dashboard/settings", label: "Settings", icon: Settings, group: "Account" }
 ];
