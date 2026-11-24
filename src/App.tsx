@@ -128,7 +128,6 @@ function App() {
   const [historyFilter, setHistoryFilter] = useState("All");
   const [historyPage, setHistoryPage] = useState(0);
   const [sortAsc, setSortAsc] = useState(false);
-  const [darkModeMotion, setDarkModeMotion] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [formEmail, setFormEmail] = useState("");
   const [formPassword, setFormPassword] = useState("");
@@ -197,7 +196,7 @@ function App() {
 
   const pageContent = () => {
     switch (path) {
-      case "/dashboard": return <Dashboard navigate={navigate} notify={notify} gesture={gesture} />;
+      case "/dashboard": return <Dashboard navigate={navigate} notify={notify} />;
       case "/dashboard/emg-monitoring": return <Monitoring monitoring={monitoring} setMonitoring={setMonitoring} recording={recording} setRecording={setRecording} range={range} setRange={setRange} exportCsv={() => exportCsv()} notify={notify} />;
       case "/dashboard/gesture-recognition": return <Recognition gesture={gesture} notify={notify} />;
       case "/dashboard/hand-control": return <HandControl gesture={gesture} setGesture={setGesture} notify={notify} />;
@@ -206,7 +205,7 @@ function App() {
       case "/dashboard/reports": return <Reports dateRange={dateRange} setDateRange={setDateRange} exportCsv={() => exportCsv()} />;
       case "/dashboard/profile": return <Profile profile={profile} setProfile={setProfile} notify={notify} />;
       case "/dashboard/settings": return <SettingsPage theme={theme} setTheme={setTheme} notify={notify} />;
-      default: return <Dashboard navigate={navigate} notify={notify} gesture={gesture} />;
+      default: return <Dashboard navigate={navigate} notify={notify} />;
     }
   };
 
@@ -297,12 +296,12 @@ function AuthForm({ mode, ...p }: AuthProps & { mode: "login" | "register" | "fo
     {p.formSuccess && <div className="form-alert alert-info"><Info size={16} />{p.formSuccess}</div>}
     <Button type="submit" className="auth-submit">{isLogin ? "Sign in" : isRegister ? "Create account" : isForgot ? "Send reset link" : "Update password"} <ArrowRight size={16} /></Button>
     <div className="auth-divider"><span />or<span /></div>
-    <Button variant="secondary" className="google-btn" onClick={() => {}}><b className="google-g">G</b> Continue with Google</Button>
+    <Button variant="secondary" className="google-btn" disabled><b className="google-g">G</b> Continue with Google <span>Unavailable</span></Button>
     <div className="auth-switch">{isLogin ? <>Don't have an account? <button type="button" onClick={() => p.navigate("/register")}>Create account</button></> : isRegister ? <>Already have an account? <button type="button" onClick={() => p.navigate("/login")}>Sign in</button></> : <button type="button" onClick={() => p.navigate("/login")}><ArrowLeft size={14} /> Back to sign in</button>}</div>
   </form>;
 }
 
-function Dashboard({ navigate, notify, gesture }: { navigate: (p: string) => void; notify: (m: string, k?: Notice["kind"]) => void; gesture: Gesture }) {
+function Dashboard({ navigate, notify }: { navigate: (p: string) => void; notify: (m: string, k?: Notice["kind"]) => void }) {
   return <><PageHeader title="Dashboard" subtitle="Monitor your NEUROGRIP prosthetic hand system." eyebrow="OVERVIEW" actions={<><span className="date-chip"><CalendarDays size={15} /> Tuesday, 24 November 2026</span><Button variant="secondary" onClick={() => notify("No live device is connected.", "warning")}><RefreshCw size={15} /> Refresh</Button></>} />
     <div className="stats-grid">
       <StatCard icon={WifiOff} label="Device status" value="Disconnected" detail="ESP32 not detected" tone="red" />
